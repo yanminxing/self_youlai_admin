@@ -32,7 +32,12 @@ npm init vite@latest self_youlai_admin  --tem
 plate vue-ts
 ```
 
+2 创建github仓库
 
+```
+// 关联仓库名称
+git remote add origin git@github.com:yanminxing/self_youlai_admin.git
+```
 
 
 
