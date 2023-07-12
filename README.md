@@ -101,11 +101,27 @@ declare module '*.vue' {
 }
 ```
 
+## 1.4 下载和使用vue-router
+
+1 命令
+
+```
+yarn add vue-router@4
+```
 
 
 
+## 1.5 vue-router使用
 
+1 下载依赖
 
+```
+yarn add vue-router@4
+```
 
+2 步骤
 
+- 定义router
+- 在main.js里面引用router
+- 使用<router-view></router-view>
 
