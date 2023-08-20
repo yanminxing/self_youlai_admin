@@ -125,3 +125,49 @@ yarn add vue-router@4
 - 在main.js里面引用router
 - 使用<router-view></router-view>
 
+## 1.6 vuex的使用
+
+1 下载依赖
+
+```
+yarn add vuex@next --save   // "vuex": "^4.1.0"
+```
+
+2 定义router
+
+1）在store中定义store
+
+```tsx
+export const key: InjectionKey<Store<StateModel>> = Symbol();
+export const store = createStore<StateModel>({
+	state() {
+		return {
+			count: 0
+		}
+	},
+	mutations: {
+		increment (state:StateModel ) {
+			state.count++
+		}
+	}
+})
+```
+
+2）在main.js里面引入注册
+
+3）在组件中使用store
+
+
+
+备注：
+
+1）InjectionKey用来标记注入值的类型，通常在provide中使用
+
+## 1.7 使用element-plus
+
+1 安装
+
+```
+yarn add element-plus
+```
+
