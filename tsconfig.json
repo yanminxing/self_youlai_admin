@@ -21,7 +21,16 @@
        对于 --target ES5: DOM,ES5,ScriptHost
        对于 --target ES6: DOM,ES6,DOM.Iterable,ScriptHost
        TS 绝不会在您的代码中注入polyfill,所以需要你自己制定编译lib */
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+
+    "skipLibCheck": true,  // element-plus 生产打包报错，通过此配置修改 TS 不对第三方依赖类型检查
+
+    /*Vite 路径别名报错*/
+    "baseUrl": "./",
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    }
   },
   // 指定需要编译文件 否则默认当前目录下除了exclude之外的所有.ts, .d.ts,.tsx 文件
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

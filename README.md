@@ -172,3 +172,82 @@ yarn add element-plus
 ```
 
 2）在main.js里面引入注册
+
+
+
+2 需要注意的是，打包报错
+
+解决：在文件tsconfig.json里面配置skipLibCheck
+
+```
+    "skipLibCheck": true,  // element-plus 生产打包报错，通过此配置修改 TS 不对第三方依赖类型检查
+
+```
+
+
+
+## 1.8 配置别名
+
+1 下载
+
+```
+// 在 ts 模块中加载 node 核心模块需要安装 node 的类型补充模块: npm i -D @types/node
+```
+
+```
+ yarn add  -D @types/node
+```
+
+2 在vite.config.ts中配置
+
+1）Vite2设置别名路径方式1
+
+```typescript
+  resolve: {
+    // Vite2设置别名路径方式1
+    alias: {
+      "@": path.resolve("./src"),
+    }
+  }
+```
+
+2  Vite2设置别名路径方式二
+
+```typescript
+resolve: {
+    // Vite2设置别名路径方式二
+    alias: [
+      {
+        find: "@",
+        replacement: path.resolve("./src")
+      },
+      {
+        find: "@image",
+        replacement: path.resolve("./src/assets/images")
+      },
+      {
+        find: "@router",
+        replacement: path.resolve("./src/router")
+      },
+      {
+        find: "@store",
+        replacement: path.resolve("./src/store")
+      },
+      {
+        find: "@api",
+        replacement: path.resolve("./src/api")
+      }
+    ]
+  }
+```
+
+
+
+3 Vite 路径别名报错解决
+
+在文件tsconfig.json里面配置baseUrl、paths
+
+
+
+
+
