@@ -171,3 +171,4 @@ export const store = createStore<StateModel>({
 yarn add element-plus
 ```
 
+2）在main.js里面引入注册
